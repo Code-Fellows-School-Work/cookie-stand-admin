@@ -4,19 +4,22 @@ import { useState } from 'react';
 
 export default function Home() {
 
-  const [cookieStand, setCookieStand] = useState({
-    inputOne: '',
-    inputTwo: '',
-    inputThree: '',
-    inputFour: '',
-  });
-  // I will need this state to display cookie stand in json
-  const [reply, setReply] = useState();
+  // Initalized to null to allow for conditional rendering
+  const [cookieStand, setCookieStand] = useState(null);
 
   function cookieStandHandler(event) {
     event.preventDefault();
-    alert("Yay");
+    const formData = new FormData(event.target);
+    const newCookieStand = {
+      Location: formData.get('Location'),
+      MinimumCustomersPerHour: formData.get('Minimum Customers per Hour'),
+      MaximumCustomersPerHour: formData.get('Maximum Customers per Hour'),
+      AverageCookiesPerSale: formData.get('Average Cookies per Sale'),
+    };
+    setCookieStand(newCookieStand); // Update state with the new cookie stand details
+    event.target.reset();
   }
+  
 
   return (
     <>
@@ -27,7 +30,8 @@ export default function Home() {
       <Header />
       <main>
         <CookieStandForm onSubmit={cookieStandHandler} />
-        <JsonReply />
+        {/* Use of the ternary operator will allow for default message or dynamically render when cookie stand is created  */}
+        {cookieStand ? <JsonReply reply={cookieStand}/> : <p className="text-center m-6">Report Table Coming Soon...</p>}
       </main>
       <Footer />
     </>
@@ -47,7 +51,8 @@ function Header() {
 // Used ChatGPT to apply styling similar to screenshot example
 function CookieStandForm(props) {
   return (
-    <form onSubmit={props.onSubmit} className="bg-white p-8 shadow-md rounded-lg space-y-4">
+    <form onSubmit={props.onSubmit} className="w-2/3 mx-auto bg-green-200 p-8 shadow-md rounded-lg space-y-4 m-6">
+      <p className="flex justify-center font-semibold text-2xl">Create Cookie Stand</p>
       <div className="flex items-center space-x-4">
         <label className="block text-sm font-medium text-gray-700">Location</label>
         <input
@@ -94,12 +99,12 @@ function CookieStandForm(props) {
 
 
 
-
-function JsonReply() {
+function JsonReply(props) {
   return (
-    <p className="flex justify-center">Report table coming soon...</p>
+    <pre className="flex justify-center">{JSON.stringify(props.reply, null, 2)}</pre>
   );
 }
+
 
 
 function Footer() {
