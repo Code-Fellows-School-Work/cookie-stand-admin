@@ -4,7 +4,12 @@ import { useState } from 'react';
 
 export default function Home() {
 
-  const [location, setLocation] = useState();
+  const [location, setLocation] = useState({
+    inputOne: '',
+    inputTwo: '',
+    inputThree: '',
+    inputFour: '',
+  });
   const [reply, setReply] = useState();
 
   function locationHandler(event) {
@@ -19,9 +24,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Main>
-
-      </Main>
+      <main>
+        <CookieStandForm />
+      </main>
       <Footer />
     </>
   );
@@ -37,25 +42,17 @@ function Header() {
   );
 }
 
-function Main() {
+
+function CookieStandForm(props) {
   return (
-    <Table></Table>
+    <form onSubmit={props.onSubmit}>
+      <input name="Location"/>
+      <button>Create</button>
+
+    </form>
   );
 }
 
-function locationForm(props) {
-  <form onSubmit={props.onSubmit}>
-    <input>Test</input>
-    <button></button>
-
-  </form>
-}
-
-function Table() {
-  return (
-    <p className="text-xs text-center">Report Table Coming Soon...</p>
-  );
-}
 
 function Footer() {
   return(
