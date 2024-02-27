@@ -1,47 +1,66 @@
 // allows updating the title for the webpage
-import Head from 'next/head';
+import Head from "next/head";
+import { useState } from 'react';
 
 export default function Home() {
+
+  const [location, setLocation] = useState();
+  const [reply, setReply] = useState();
+
+  function locationHandler(event) {
+    event.preventDefault();
+    alert("works");
+  }
+
   return (
     <>
       <Head>
         <title>Cookie Stands</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header>
-        <h1 className="text-3xl bg-green-600 p-2">
-          Cookie Stand Admin Coming Soon
-        </h1>
-      </Header>
+      <Header />
       <Main>
-        <Table>
-        </Table>
+
       </Main>
-      <Footer>Footer Coming soon</Footer>
+      <Footer />
     </>
   );
 }
 
 function Header() {
   return (
-    <h1>Header coming soon</h1>
+    <header>
+      <h1 className="font-medium text-2xl bg-green-600 p-2">
+        Cookie Stand Admin
+      </h1>
+    </header>
   );
 }
 
 function Main() {
   return (
-    <h1>Main coming soon</h1>
+    <Table></Table>
   );
+}
+
+function locationForm(props) {
+  <form onSubmit={props.onSubmit}>
+    <input>Test</input>
+    <button></button>
+
+  </form>
 }
 
 function Table() {
   return (
-    <p>Table coming soon</p>
-  )
+    <p className="text-xs text-center">Report Table Coming Soon...</p>
+  );
 }
 
 function Footer() {
-  return (
-    <h1>Footer coming soon</h1>
+  return(
+    <footer>
+      <p className="text-xs bg-green-600 p-2">&copy;2024</p>
+    </footer>
   );
 }
