@@ -10,13 +10,14 @@ export default function Home() {
   function cookieStandHandler(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
+    // Used ChatGPT to help target form data
     const newCookieStand = {
       Location: formData.get('Location'),
       MinimumCustomersPerHour: formData.get('Minimum Customers per Hour'),
       MaximumCustomersPerHour: formData.get('Maximum Customers per Hour'),
       AverageCookiesPerSale: formData.get('Average Cookies per Sale'),
     };
-    setCookieStand(newCookieStand); // Update state with the new cookie stand details
+    setCookieStand(newCookieStand);
     event.target.reset();
   }
   
@@ -97,15 +98,12 @@ function CookieStandForm(props) {
   );
 }
 
-
-
+// Used ChatGPT to help render JSON data
 function JsonReply(props) {
   return (
     <pre className="flex justify-center">{JSON.stringify(props.reply, null, 2)}</pre>
   );
 }
-
-
 
 function Footer() {
   return(
