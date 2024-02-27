@@ -4,17 +4,18 @@ import { useState } from 'react';
 
 export default function Home() {
 
-  const [location, setLocation] = useState({
+  const [cookieStand, setCookieStand] = useState({
     inputOne: '',
     inputTwo: '',
     inputThree: '',
     inputFour: '',
   });
+  // I will need this state to display cookie stand in json
   const [reply, setReply] = useState();
 
-  function locationHandler(event) {
+  function cookieStandHandler(event) {
     event.preventDefault();
-    alert("works");
+    alert("Yay");
   }
 
   return (
@@ -25,7 +26,7 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <CookieStandForm />
+        <CookieStandForm onSubmit={cookieStandHandler} />
       </main>
       <Footer />
     </>
@@ -48,7 +49,6 @@ function CookieStandForm(props) {
     <form onSubmit={props.onSubmit}>
       <input name="Location"/>
       <button>Create</button>
-
     </form>
   );
 }
