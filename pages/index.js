@@ -9,10 +9,10 @@ import { hours } from "../data";
 
 export default function Home() {
   // Initalized to null to allow for conditional rendering
-  const [cookieStand, setCookieStand] = useState(null);
+  const [cookieStandReports, setCookieStandReports] = useState([]);
 
   function handleCreate (cookieStandInfo) { 
-    setStandReports([...standReports, StandInfo]);
+    setCookieStandReports([...cookieStandReports, cookieStandInfo]);
   }
 
   return (
@@ -20,11 +20,11 @@ export default function Home() {
       {/* this head is different because it's imported to update webpage title */}
       <Head>
         <title>Cookie Stands</title>
-        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <Header />
       <main className="p-4">
         <CookieStandForm onCreate={handleCreate}/>
+        <Report reports={cookieStandReports} hours={hours}/>
       </main>
       <Footer />
     </>

@@ -3,6 +3,7 @@ export default function CookieStandForm(props) {
 
     function cookieStandHandler(event) {
         event.preventDefault();
+        // Retrieved from JB's demo
         props.onCreate({
             id: event.target.location.value,
             location: event.target.location.value,
@@ -13,6 +14,7 @@ export default function CookieStandForm(props) {
         });
         // setCookieStand(newCookieStand);
         event.target.reset();
+        console.log(props.onCreate);
       }
 
     return (
@@ -28,7 +30,7 @@ export default function CookieStandForm(props) {
             Location
           </label>
           <input
-            name="Location"
+            name="location"
             type="text"
             className="flex-1 mt-1 p-2 border border-gray-300 rounded-md"
           />
@@ -39,7 +41,7 @@ export default function CookieStandForm(props) {
               Min Customers per Hour
             </label>
             <input
-              name="Minimum Customers per Hour"
+              name="minimumCustomersPerHour"
               type="number"
               className="mt-1 w-full p-2 border border-gray-300 rounded-md"
             />
@@ -49,7 +51,7 @@ export default function CookieStandForm(props) {
               Max Customers per Hour
             </label>
             <input
-              name="Maximum Customers per Hour"
+              name="maximumCustomersPerHour"
               type="number"
               className="mt-1 w-full p-2 border border-gray-300 rounded-md"
             />
@@ -59,7 +61,7 @@ export default function CookieStandForm(props) {
               Average Cookies per Sale
             </label>
             <input
-              name="Average Cookies per Sale"
+              name="averageCookiesPerSale"
               type="number"
               step="0.1"
               className="mt-1 w-full p-2 border border-gray-300 rounded-md"
