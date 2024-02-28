@@ -1,8 +1,23 @@
 // Used ChatGPT to apply styling similar to screenshot example
 export default function CookieStandForm(props) {
+
+    function cookieStandHandler(event) {
+        event.preventDefault();
+        props.onCreate({
+            id: event.target.location.value,
+            location: event.target.location.value,
+            minimumCustomersPerHour: parseInt(event.target.minimumCustomersPerHour.value),
+            maximumCustomersPerHour: parseInt(event.target.maximumCustomersPerHour.value),
+            averageCookiesPerSale: parseFloat(event.target.averageCookiesPerSale.value),
+            hourly_sales: [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
+        });
+        // setCookieStand(newCookieStand);
+        event.target.reset();
+      }
+
     return (
       <form
-        onSubmit={props.onSubmit}
+        onSubmit={cookieStandHandler}
         className="w-2/3 mx-auto bg-green-200 p-8 shadow-md rounded-lg space-y-4 m-6"
       >
         <p className="flex justify-center font-semibold text-2xl">
