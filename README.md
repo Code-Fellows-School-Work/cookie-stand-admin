@@ -3,8 +3,8 @@
 ## Project: cookie-stand-admin
 
 ### Author: Errol Vidad
-V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/cookie-stand-admin/pull/1)
-V.1.1.0 (Pr: https://github.com/Code-Fellows-School-Worl/cookie-stand-admin/pull/2)
+- V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/cookie-stand-admin/pull/1)
+- V.1.1.0 (Pr: https://github.com/Code-Fellows-School-Worl/cookie-stand-admin/pull/2)
 
 ### Links and Resources
 - Back-end server url (when applicable): None
