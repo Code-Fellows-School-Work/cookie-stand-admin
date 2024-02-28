@@ -1,4 +1,3 @@
-// Used ChatGPT to apply styling similar to screenshot example
 export default function CookieStandForm(props) {
 
   function cookieStandHandler(event) {
@@ -33,6 +32,7 @@ export default function CookieStandForm(props) {
     return hourlySales;
   }
 
+  // Used ChatGPT to apply styling similar to screenshot example
   return (
     <form
       onSubmit={cookieStandHandler}

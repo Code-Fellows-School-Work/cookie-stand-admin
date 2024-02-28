@@ -1,3 +1,4 @@
+// Used JB's demo code
 export default function ReportTable(props) {
   if (props.reports.length === 0) {
     return (
