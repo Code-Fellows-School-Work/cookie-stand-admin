@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import CookieStandForm from "@/components/create-form";
 import Report from "@/components/report";
-import LoginForm from "@/components/login-form"; // Import the LoginForm component
+import LoginForm from "@/components/login-form";
 import { hours } from "../data";
 
 export default function Home() {
@@ -13,11 +13,9 @@ export default function Home() {
   const [cookieStandReports, setCookieStandReports] = useState([]);
   const [user, setUser] = useState(null); // State to simulate user login
 
+  // Used Chatgpt to create login code
   const handleLogin = (username, password) => {
-    // Implement your login logic here
-    // This is a placeholder for demonstration
     setUser({ username });
-    // Typically, you'd set the user based on successful authentication
   };
 
   const handleCreate = (cookieStandInfo) => {
