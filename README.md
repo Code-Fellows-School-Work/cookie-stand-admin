@@ -1,4 +1,4 @@
-# LAB - Class 39
+# LAB - Class 41
 
 ## Project: cookie-stand-admin
 
@@ -6,33 +6,23 @@
 V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/cookie-stand-admin/pull/1)
 V.1.1.0 (Pr: https://github.com/Code-Fellows-School-Work/cookie-stand-admin/pull/2)
 V.2.0.0 (Pr: https://github.com/Code-Fellows-School-Work/cookie-stand-admin/pull/3)
+V.3.0.0 (Pr: https://github.com/Code-Fellows-School-Work/cookie-stand-admin/pull/4)
 
 ### Links and Resources
-- Back-end server url (when applicable): None
-- Front-end application (when applicable): None
+- Back-end server url (when applicable): https://cookie-stand-admin-one-beta.vercel.app
+- Front-end application (when applicable): https://cookie-stand-api-wine.vercel.app
 
 ### Setup
-- Install Docker
 - git clone https://github.com/Code-Fellows-School-Work/cookie-stand-admin.git
 
 i.e.
 
 - PORT - Port Number: N/A
-- DATABASE_URL - N/A
+- DATABASE_URL - postgres://dnmvboqy:RAMEpRNNuqmz2ILSijR7pFHfMQ4d2HeI@bubble.db.elephantsql.com/dnmvboqy
 
 ### How to initialize/run your application (where applicable)
 
-- Server setup:
-    - create .env file and add information from canvas submission
-    - Start Docker Desktop app
-    - Run the command: docker compose up
-
-- Client setup:
-    - cd cookie-stand-admin/cookie-stand-admin
-    - Run the command: npm install
-    - Run the command: npm run dev
-    - In the web browser, navigate to http://localhost:3000
-    - Login information available in canvas submission
+Visit deployed website at: https://cookie-stand-admin-one-beta.vercel.app
 
 ### How to use your library (where applicable)
 ### Tests
