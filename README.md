@@ -13,7 +13,8 @@ V.3.0.0 (Pr: https://github.com/Code-Fellows-School-Work/cookie-stand-admin/pull
 - Front-end application (when applicable): https://cookie-stand-api-wine.vercel.app
 
 ### Setup
-- git clone https://github.com/Code-Fellows-School-Work/cookie-stand-admin.git
+- Client: gh repo clone Code-Fellows-School-Work/cookie-stand-admin
+- Server: gh repo clone Code-Fellows-School-Work/cookie-stand-api
 
 i.e.
 
